@@ -7,6 +7,7 @@ import './index.css';
 import axios from 'axios';
 
 axios.defaults.baseURL = import.meta.env.MODE === 'development' ? '' : 'https://shopverse-api-pjey.onrender.com';
+axios.defaults.withCredentials = true;
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
