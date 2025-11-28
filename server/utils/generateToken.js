@@ -5,11 +5,13 @@ const generateToken = (res, userId) => {
     expiresIn: '30d',
   });
 
-  // Set JWT as an HTTP-Only cookie (More secure than local storage)
+  // Determine if we are in production
+  const isProduction = process.env.NODE_ENV === 'production';
+
   res.cookie('jwt', token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV !== 'development', // Use secure cookies in production
-    sameSite: 'strict', // Prevent CSRF attacks
+    secure: isProduction, // TRUE in production (HTTPS), False in dev
+    sameSite: isProduction ? 'None' : 'Lax', // 'None' allows cross-site cookies
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
   });
 };
