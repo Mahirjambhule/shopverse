@@ -10,6 +10,7 @@ const StripePayment = ({ orderId, amount, onSuccess }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(`ATTEMPTING PAY URL: /api/orders/${orderId}/pay`);
     setLoading(true);
 
     if (!stripe || !elements) return;

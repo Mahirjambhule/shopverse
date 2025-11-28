@@ -139,7 +139,7 @@ const OrderScreen = () => {
                 <Elements stripe={stripePromise}>
                   <StripePayment
                     amount={order.totalPrice}
-                    orderId={order._id}
+                    orderId={order._id}  // <--- IS THIS UNDEFINED?
                     onSuccess={successPaymentHandler}
                   />
                 </Elements>
