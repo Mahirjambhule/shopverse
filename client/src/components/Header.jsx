@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../slices/authSlice';
 import axios from 'axios';
 import SearchBox from './SearchBox';
+import { FaShoppingBag } from 'react-icons/fa';
 
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -28,9 +29,13 @@ const Header = () => {
   return (
     <header className="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
       <div className="container mx-auto flex justify-between items-center p-4">
-
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 mr-4">
+          {/* Icon */}
+          <div className="bg-white text-black p-2 rounded-full">
+            <FaShoppingBag />
+          </div>
+          {/* Text */}
           <span className="text-2xl font-bold tracking-tighter hover:text-gray-300 transition-colors">
             ShopVerse
           </span>
