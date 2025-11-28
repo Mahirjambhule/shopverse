@@ -5,14 +5,11 @@ const generateToken = (res, userId) => {
     expiresIn: '30d',
   });
 
-  // Determine if we are in production
-  const isProduction = process.env.NODE_ENV === 'production';
-
   res.cookie('jwt', token, {
     httpOnly: true,
-    secure: isProduction, // TRUE in production (HTTPS), False in dev
-    sameSite: isProduction ? 'None' : 'Lax', // 'None' allows cross-site cookies
-    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+    secure: true,
+    sameSite: 'None',
+    maxAge: 30 * 24 * 60 * 60 * 1000,
   });
 };
 
