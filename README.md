@@ -88,3 +88,41 @@ Follow these steps to set up the project locally on your machine.
 git clone [https://github.com/YOUR_USERNAME/shopverse.git](https://github.com/YOUR_USERNAME/shopverse.git)
 cd shopverse
 ```
+
+**2. Install Dependencies**
+
+```bash
+# Install Backend dependencies
+cd server
+npm install
+
+# Install Frontend dependencies
+cd ../client
+npm install
+```
+
+**3. Seed the Database (Optional)**
+
+```bash
+# Run this inside the server folder
+node seeder.js
+```
+
+**4. Start the Application**
+
+```bash
+Terminal 1 (Backend):
+cd server
+npm run dev
+
+Terminal 2 (Frontend):
+cd client
+npm run dev
+```
+
+**5. Access the App**
+
+```bash
+Open your browser and navigate to:
+http://localhost:5173
+```
