@@ -34,7 +34,6 @@ const RegisterScreen = () => {
     }
 
     try {
-      // API Call to create user
       const res = await axios.post('/api/users', { name, email, password });
       dispatch(setCredentials(res.data));
       navigate(redirect);

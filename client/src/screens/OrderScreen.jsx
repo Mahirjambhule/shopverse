@@ -42,11 +42,10 @@ const OrderScreen = () => {
     window.location.reload();
   }
 
-  // --- 3. CONDITIONAL RETURNS (Only after hooks) ---
   if (loading) return <div className="text-center mt-20">Loading Order...</div>;
   if (!order) return <div className="text-center mt-20 text-red-500">Order Not Found</div>;
 
-  // --- 4. RENDER UI ---
+
   return (
     <div className="container mx-auto p-4 mt-8">
       <h1 className="text-2xl font-bold mb-6 text-gray-900">Order {order._id}</h1>
@@ -107,7 +106,6 @@ const OrderScreen = () => {
 
         </div>
 
-        {/* Right Column: Summary */}
         <div className="md:col-span-1">
           <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
             <h2 className="text-xl font-bold mb-6 text-gray-900">Order Summary</h2>
@@ -139,7 +137,7 @@ const OrderScreen = () => {
                 <Elements stripe={stripePromise}>
                   <StripePayment
                     amount={order.totalPrice}
-                    orderId={order._id}  // <--- IS THIS UNDEFINED?
+                    orderId={order._id}
                     onSuccess={successPaymentHandler}
                   />
                 </Elements>

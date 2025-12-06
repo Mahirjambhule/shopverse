@@ -16,7 +16,6 @@ const CartScreen = () => {
   };
 
   const checkoutHandler = () => {
-    // We will handle login redirect later
     navigate('/login?redirect=/shipping');
   };
 

@@ -41,7 +41,6 @@ const Header = () => {
           </span>
         </Link>
 
-        {/* Search Box - Hidden on very small screens, visible on md+ */}
         <div className="hidden md:block flex-1 max-w-lg mx-auto">
           <SearchBox />
         </div>
